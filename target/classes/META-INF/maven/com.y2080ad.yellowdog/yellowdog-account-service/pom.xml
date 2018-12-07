@@ -4,7 +4,10 @@
   <artifactId>yellowdog-account-service</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>yellowdog-account-service</name>
-  
+  <properties>
+        <!-- Stand-alone RESTFul application for testing only -->
+        <start-class>com.y2080ad.yellowdog.services.accouts.Main</start-class>
+    </properties>
   <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -46,19 +49,22 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
+        
+		<dependency>
+            <!-- In-memory database for testing/demos -->
+            <groupId>org.hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+        </dependency>
 
         <dependency>
             <!-- Spring Cloud starter -->
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter</artifactId>
         </dependency>
-
         <dependency>
-            <!-- Eureka service registration - CHANGED -->
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
-
     </dependencies>
 
     <dependencyManagement>
